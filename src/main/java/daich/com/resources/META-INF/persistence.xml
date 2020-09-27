@@ -1,0 +1,35 @@
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence_2_2.xsd"
+             version="2.2">
+
+    <persistence-unit name="kcPersistenceUnit" transaction-type="RESOURCE_LOCAL">
+        <description>
+            daich custome jpa
+        </description>
+        <!-- <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider> -->
+        <!-- <class>jp.daich.letter.spring.model.db.entity.TSentence</class>
+        <class>jp.daich.letter.spring.model.db.entity.TPage</class> -->
+        <properties>
+            <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver" />
+            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3301/db_letter?serverTimezone=JST" />
+            <property name="javax.persistence.jdbc.user" value="letter" />
+            <property name="javax.persistence.jdbc.password" value="Letter_0" />
+            <property name="javax.persistence.schema-generation.database.action" value="none"/>
+            <property name="javax.persistence.schema-generation.scripts.action" value="none"/>
+            <!-- <property name="javax.persistence.schema-generation.scripts.create-target" value="sampleCreate.ddl"/> -->
+            <!-- <property name="javax.persistence.schema-generation.scripts.drop-target" value="sampleDrop.ddl"/> -->
+
+            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL8Dialect" />
+            <property name="hibernate.show_sql" value="true" />
+            <!--<property name="hibernate.hbm2ddl.auto" value="create" />-->
+
+            <!-- jpa debug config -->
+            <property name="openjpa.Log" value="DefaultLevel=WARN, Runtime=INFO, Tool=INFO, SQL=TRACE"/>
+            <property name="openjpa.ConnectionFactoryProperties" value="PrintParameters=true" />
+
+        </properties>
+
+    </persistence-unit>
+
+</persistence>
